@@ -8,22 +8,55 @@ import { escape } from '@microsoft/sp-lodash-subset';
 
 import styles from './ContactsWebPart.module.scss';
 import * as strings from 'ContactsWebPartStrings';
+import * as microsoftTeams from '@microsoft/teams-js';
 
 export interface IContactsWebPartProps {
   description: string;
 }
 
 export default class ContactsWebPart extends BaseClientSideWebPart<IContactsWebPartProps> {
-
+  private _teamsContext: microsoftTeams.Context;
+  protected onInit(): Promise<any> {
+    let retVal: Promise<any> = Promise.resolve();
+    if (this.context.microsoftTeams) {
+      retVal = new Promise((resolve, reject) => {
+        this.context.microsoftTeams.getContext(context => {
+          this._teamsContext = context;
+          resolve();
+        });
+      });
+    }
+    return retVal;
+  }
   public render(): void {
+
+    let title: string = '';
+    let subTitle: string = '';
+    let siteTabTitle: string = '';
+  
+    if (this._teamsContext) {
+      // We have teams context for the web part
+      title = "Welcome to Teams!";
+      subTitle = "Building custom enterprise tabs for your business.";
+      siteTabTitle = "We are in the context of following Team: " + this._teamsContext.teamName;
+    }
+    else
+    {
+      // We are rendered in normal SharePoint context
+      title = "Welcome to SharePoint!";
+      subTitle = "Customize SharePoint experiences using Web Parts.";
+      siteTabTitle = "We are in the context of following site: " + this.context.pageContext.web.title;
+    }
+  
     this.domElement.innerHTML = `
-      <div class="${ styles.contacts }">
+      <div class="${ styles.myFirstTeamsTab }">
         <div class="${ styles.container }">
           <div class="${ styles.row }">
             <div class="${ styles.column }">
-              <span class="${ styles.title }">Welcome to SharePoint!</span>
-              <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
-              <p class="${ styles.description }">${escape(this.properties.description)}</p>
+              <span class="${ styles.title }">${title}</span>
+              <p class="${ styles.subTitle }">${subTitle}</p>
+              <p class="${ styles.description }">${siteTabTitle}</p>
+              <p class="${ styles.description }">Description property value - ${escape(this.properties.description)}</p>
               <a href="https://aka.ms/spfx" class="${ styles.button }">
                 <span class="${ styles.label }">Learn more</span>
               </a>
@@ -32,7 +65,6 @@ export default class ContactsWebPart extends BaseClientSideWebPart<IContactsWebP
         </div>
       </div>`;
   }
-
   protected get dataVersion(): Version {
     return Version.parse('1.0');
   }
