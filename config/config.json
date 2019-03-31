@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "contacts-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/contacts/ContactsWebPart.js",
+          "manifest": "./src/webparts/contacts/ContactsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ContactsWebPartStrings": "lib/webparts/contacts/loc/{locale}.js"
+  }
+}
