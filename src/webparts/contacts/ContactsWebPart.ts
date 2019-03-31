@@ -49,20 +49,11 @@ export default class ContactsWebPart extends BaseClientSideWebPart<IContactsWebP
     }
   
     this.domElement.innerHTML = `
-      <div class="${ styles.myFirstTeamsTab }">
-        <div class="${ styles.container }">
-          <div class="${ styles.row }">
-            <div class="${ styles.column }">
+      <div>
               <span class="${ styles.title }">${title}</span>
               <p class="${ styles.subTitle }">${subTitle}</p>
               <p class="${ styles.description }">${siteTabTitle}</p>
-              <p class="${ styles.description }">Description property value - ${escape(this.properties.description)}</p>
-              <a href="https://aka.ms/spfx" class="${ styles.button }">
-                <span class="${ styles.label }">Learn more</span>
-              </a>
-            </div>
-          </div>
-        </div>
+          
       </div>`;
   }
   protected get dataVersion(): Version {
