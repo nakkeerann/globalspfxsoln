@@ -37,7 +37,7 @@ export default class ContactsWebPart extends BaseClientSideWebPart<IContactsWebP
     if (this._teamsContext) {
       // We have teams context for the web part
       title = "Welcome to Teams!";
-      subTitle = "Building custom enterprise tabs for your business.";
+      subTitle = "Customize for your need";
       siteTabTitle = "We are in the context of following Team: " + this._teamsContext.teamName;
     }
     else
