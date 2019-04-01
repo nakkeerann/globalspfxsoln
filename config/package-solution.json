@@ -3,7 +3,7 @@
   "solution": {
     "name": "globalspfxsoln-client-side-solution",
     "id": "e3530e3e-cc3b-4a92-adbe-a70ab10b8e21",
-    "version": "1.0.0.0",
+    "version": "1.0.0.3",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false

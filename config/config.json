@@ -9,10 +9,28 @@
           "manifest": "./src/webparts/contacts/ContactsWebPart.manifest.json"
         }
       ]
+    },
+    "contacts-reactjs-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/contactsReactjs/ContactsReactjsWebPart.js",
+          "manifest": "./src/webparts/contactsReactjs/ContactsReactjsWebPart.manifest.json"
+        }
+      ]
+    },
+    "mails-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/mails/MailsWebPart.js",
+          "manifest": "./src/webparts/mails/MailsWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "ContactsWebPartStrings": "lib/webparts/contacts/loc/{locale}.js"
+    "ContactsWebPartStrings": "lib/webparts/contacts/loc/{locale}.js",
+    "ContactsReactjsWebPartStrings": "lib/webparts/contactsReactjs/loc/{locale}.js",
+    "MailsWebPartStrings": "lib/webparts/mails/loc/{locale}.js"
   }
 }
