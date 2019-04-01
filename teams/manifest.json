@@ -1,0 +1,48 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.2/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.2",
+    "packageName": "Mails Tab Package",
+    "id": "aa3fecf0-1fd0-4751-aba1-12314dc3a22f",
+    "version": "0.1",
+    "developer": {
+      "name": "Nakkeeran",
+      "websiteUrl": "https://products.office.com/en-us/sharepoint/collaboration",
+      "privacyUrl": "https://privacy.microsoft.com/en-us/privacystatement",
+      "termsOfUseUrl": "https://www.microsoft.com/en-us/servicesagreement"
+    },
+    "name": {
+      "short": "Mails Info"
+    },
+    "description": {
+      "short": "Mails tab",
+      "full": "Mails Tab created using SPFx"
+    },
+    "icons": {
+      "outline": "39578604-b0a7-4814-bae6-0664ba085ee8_outline.png",
+      "color": "39578604-b0a7-4814-bae6-0664ba085ee8_color.png"
+    },
+    "accentColor": "#004578",
+    "configurableTabs": [
+      {
+        "configurationUrl": "https://nakkeerann.sharepoint.com/sites/SharePoint/_layouts/15/TeamsLogon.aspx?SPFX=true&dest=/sites/SharePoint/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=39578604-b0a7-4814-bae6-0664ba085ee8%26forceLocale={locale}",
+        "canUpdateConfiguration": true,
+        "scopes": [
+          "team"
+        ]
+      }
+    ],
+    "validDomains": [
+      "*.login.microsoftonline.com",
+      "*.sharepoint.com",
+      "*.sharepoint-df.com",
+      "spoppe-a.akamaihd.net",
+      "spoprod-a.akamaihd.net",
+      "resourceseng.blob.core.windows.net",
+      "msft.spoppe.com"
+    ],
+    "webApplicationInfo": {
+      "resource": "https://nakkeerann.sharepoint.com",
+      "id": "00000003-0000-0ff1-ce00-000000000000"
+    }
+  }
+  
